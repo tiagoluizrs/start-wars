@@ -1,2 +1,3 @@
-flask
-gunicorn
+Flask==1.1.1
+Flask-PyMongo==2.3.0
+gunicorn==19.9.0
