@@ -1,0 +1,18 @@
+{% extends admin_base_template %}
+{% block body %}
+
+<div class="row mb-3">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12 py-2">
+        <div class="card bg-success text-white h-100">
+            <div class="card-body bg-success">
+                <div class="rotate">
+                    <i class="fa fa-user fa-4x"></i>
+                </div>
+                <h6 class="text-uppercase">Usuários</h6>
+                <h1 class="display-4">{{report.users}}</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
