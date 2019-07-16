@@ -3,3 +3,4 @@ venv
 
 *.pyc
 config.py
+insert_in_mongo.py

@@ -7,7 +7,15 @@ class Config(object):
     TEMPLATE_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     APP = None
-    MONGO_URI = "mongodb://localhost:27017/starWars"
+    DB = None
+
+    MONGO_URI = "mongodb://admin:#Tiagos3v3n@localhost:27017/starWars"
+    MONGO_HOST = "127.0.0.1"
+    MONGO_PORT = 27017
+    MONGO_DBNAME = "starWars"
+    MONGO_USERNAME = "admin"
+    MONGO_PASSWORD = "#Tiagos3v3n"
+    MONGO = None
 
 class DevelopmentConfig(Config):
     TESTING = False
