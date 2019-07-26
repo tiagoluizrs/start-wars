@@ -7,7 +7,6 @@ class Config(object):
     TEMPLATE_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     APP = None
-    SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://usuario:senha@localhost:3306/banco'
     SENDGRID_API_KEY = 'API_KEY'
 
 class DevelopmentConfig(Config):

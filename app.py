@@ -10,11 +10,11 @@ from controller.Planet import Planet
 
 config = app_config[app_active]
 
-def create_app(config_name):
+def create_app():
     app = Flask(__name__)
     
     app.secret_key = config.SECRET
-    app.config.from_object(app_config[config_name])
+    app.config.from_object(app_config[app_active])
     app.config.from_pyfile('config.py')
 
     db = MongoClient(
@@ -25,6 +25,7 @@ def create_app(config_name):
         authSource=config.MONGO_USERNAME,
         maxPoolSize=4
     )
+    
     config.MONGO = db.starWars
 
     @app.after_request
@@ -65,7 +66,7 @@ def create_app(config_name):
             'result': ''
         }
 
-        if request.json['name'] is None or request.json['climate'] is None or request.json['terrain'] is None:
+        if request.json is None:
             response['result'] = 'Você precisa enviar seu objeto com os campos nome, climate e terrain'
         else:
             response = planet.update_(_id, request.json)
