@@ -1,5 +1,9 @@
 venv
 .vscode
+.pytest_cache
+__pycache__
+*/__pycache__
 
 *.pyc
 config.py
+log.txt

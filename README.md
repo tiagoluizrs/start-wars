@@ -129,3 +129,20 @@ Pronto, sua API está funcionando:
  * Debugger is active!
  * Debugger PIN: 142-380-668
 ```
+
+## Realizando testes Unitários
+
+1. Para realizar testes unitários basta rodar o comando à seguir:
+```console
+py.test --cov=app
+```
+
+> Na pasta tests existe um arquivo chamado `test_planet.py`, caso deseje criar outros testes, basta criar um arquivo nesta pasta com o prefixo test_ e um nome para completar o arquivo e a extensão .py, por exemplo `test_persist.py`. A opção --cov=app irá exibir a porcentagem de código de nossa API que está coberto pelos testes unitários que foram criados.
+
+Algo assim será visto no terminal:
+```console
+----------- coverage: platform linux, python 3.7.3-final-0 -----------
+Name     Stmts   Miss  Cover
+----------------------------
+app.py      43      2    95%
+```

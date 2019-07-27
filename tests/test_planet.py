@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from os import path
 import json
 import unittest
@@ -5,7 +6,6 @@ import sys
 sys.path.append(path.join(path.dirname(__file__), '..'))
 from app import create_app
 from config import app_config, app_active
-
 
 class TestHomeView(unittest.TestCase):
 
