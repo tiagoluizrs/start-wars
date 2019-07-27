@@ -17,6 +17,7 @@ def create_app():
     app.config.from_object(app_config[app_active])
     app.config.from_pyfile('config.py')
 
+    # Se seu banco possuir usuário e senha use este modelo
     db = MongoClient(
         host=config.MONGO_HOST,
         port=config.MONGO_PORT, 
@@ -25,6 +26,13 @@ def create_app():
         authSource=config.MONGO_USERNAME,
         maxPoolSize=4
     )
+
+    # Se não houver usuário e senha use este
+    # db = MongoClient(
+    #     host=config.MONGO_HOST,
+    #     port=config.MONGO_PORT, 
+    #     maxPoolSize=4
+    # )
     
     config.MONGO = db.starWars
 

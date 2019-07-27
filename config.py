@@ -7,14 +7,6 @@ class Config(object):
     TEMPLATE_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     APP = None
-    DB = None
-
-    MONGO_URI = "mongodb://admin:#Tiagos3v3n@localhost:27017/starWars"
-    MONGO_HOST = "127.0.0.1"
-    MONGO_PORT = 27017
-    MONGO_DBNAME = "starWars"
-    MONGO_USERNAME = "admin"
-    MONGO_PASSWORD = "#Tiagos3v3n"
     MONGO = None
 
 class DevelopmentConfig(Config):
@@ -24,6 +16,12 @@ class DevelopmentConfig(Config):
     PORT_HOST = 8000
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
 
+    MONGO_HOST = "127.0.0.1"
+    MONGO_PORT = 27017
+    MONGO_DBNAME = "starWars"
+    MONGO_USERNAME = "admin"
+    MONGO_PASSWORD = "#Tiagos3v3n"
+
 class TestingConfig(Config):
     TESTING = True
     DEBUG = True
@@ -31,12 +29,24 @@ class TestingConfig(Config):
     PORT_HOST = 5000
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
 
+    MONGO_HOST = "127.0.0.1"
+    MONGO_PORT = 27017
+    MONGO_DBNAME = "starWars"
+    MONGO_USERNAME = "admin"
+    MONGO_PASSWORD = "#Tiagos3v3n"
+
 class ProductionConfig(Config):
     DEBUG = False
     TESTING = False
     IP_HOST = '0.0.0.0' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
     PORT_HOST = 5000
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
+
+    MONGO_HOST = "127.0.0.1"
+    MONGO_PORT = 27017
+    MONGO_DBNAME = "starWars"
+    MONGO_USERNAME = "admin"
+    MONGO_PASSWORD = "#Tiagos3v3n"
 
 app_config = {
     'development': DevelopmentConfig(),
@@ -46,4 +56,4 @@ app_config = {
 
 app_active = os.getenv('FLASK_ENV')
 if app_active is None:
-    app_active = 'production'
+    app_active = 'development'

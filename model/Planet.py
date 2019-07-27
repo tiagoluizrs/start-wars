@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import ipdb
 # config import
 from config import app_config, app_active
 from bson.objectid import ObjectId
